@@ -51,5 +51,9 @@ config.max_fps = 240
 -- Whether or not to unzoom pane when a direction key is pressed
 config.unzoom_on_switch_pane = true
 
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+	config.default_domain = 'WSL:Ubuntu'
+end
+
 -- and finally, return the configuration to wezterm
 return config
