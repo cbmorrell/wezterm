@@ -38,7 +38,7 @@ config.initial_rows = 18
 config.initial_cols = 100
 
 -- Set FPS limit
-config.max_fps = 120
+config.max_fps = 240
 
 -- and finally, return the configuration to wezterm
 return config
