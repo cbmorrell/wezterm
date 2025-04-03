@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 -- This table will hold the configuration.
 local config = {}
@@ -30,7 +31,13 @@ config.keys = {
   -- Make Cmd-Right equivalent to Ctrl-e (end of line)
   {key="RightArrow", mods="CMD", action=wezterm.action{SendString="\x05"}},
   -- Make Cmd-Backspace equivalent to Ctrl-u (delete line)
-  {key="Backspace", mods="CMD", action=wezterm.action{SendString="\x15"}}
+  {key="Backspace", mods="CMD", action=wezterm.action{SendString="\x15"}},
+  -- Set zoom of pane
+  {key="i", mods="CTRL", action=wezterm.action.TogglePaneZoomState},
+  {key="h", mods="CTRL", action=act.ActivatePaneDirection "Left"},
+  {key="j", mods="CTRL", action=act.ActivatePaneDirection "Up"},
+  {key="k", mods="CTRL", action=act.ActivatePaneDirection "Down"},
+  {key="l", mods="CTRL", action=act.ActivatePaneDirection "Right"},
 }
 
 -- Adjust default window size
