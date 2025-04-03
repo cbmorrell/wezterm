@@ -33,11 +33,12 @@ config.keys = {
   -- Make Cmd-Backspace equivalent to Ctrl-u (delete line)
   {key="Backspace", mods="CMD", action=wezterm.action{SendString="\x15"}},
   -- Set zoom of pane
-  {key="i", mods="CTRL", action=wezterm.action.TogglePaneZoomState},
-  {key="h", mods="CTRL", action=act.ActivatePaneDirection "Left"},
-  {key="j", mods="CTRL", action=act.ActivatePaneDirection "Up"},
-  {key="k", mods="CTRL", action=act.ActivatePaneDirection "Down"},
-  {key="l", mods="CTRL", action=act.ActivatePaneDirection "Right"},
+  {key="i", mods="CMD", action=wezterm.action.TogglePaneZoomState},
+  -- Set directions for pane navigation
+  {key="h", mods="CMD", action=act.ActivatePaneDirection "Left"},
+  {key="j", mods="CMD", action=act.ActivatePaneDirection "Up"},
+  {key="k", mods="CMD", action=act.ActivatePaneDirection "Down"},
+  {key="l", mods="CMD", action=act.ActivatePaneDirection "Right"},
 }
 
 -- Adjust default window size
@@ -46,6 +47,9 @@ config.initial_cols = 100
 
 -- Set FPS limit
 config.max_fps = 240
+
+-- Whether or not to unzoom pane when a direction key is pressed
+config.unzoom_on_switch_pane = true
 
 -- and finally, return the configuration to wezterm
 return config
