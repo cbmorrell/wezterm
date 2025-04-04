@@ -33,12 +33,12 @@ config.keys = {
   -- Make Cmd-Backspace equivalent to Ctrl-u (delete line)
   {key="Backspace", mods="CMD", action=wezterm.action{SendString="\x15"}},
   -- Set zoom of pane
-  {key="i", mods="CMD", action=wezterm.action.TogglePaneZoomState},
+  {key="i", mods="CMD|SHIFT", action=wezterm.action.TogglePaneZoomState},
   -- Set directions for pane navigation
-  {key="h", mods="CMD", action=act.ActivatePaneDirection "Left"},
-  {key="j", mods="CMD", action=act.ActivatePaneDirection "Up"},
-  {key="k", mods="CMD", action=act.ActivatePaneDirection "Down"},
-  {key="l", mods="CMD", action=act.ActivatePaneDirection "Right"},
+  {key="h", mods="CMD|SHIFT", action=act.ActivatePaneDirection "Left"},
+  {key="j", mods="CMD|SHIFT", action=act.ActivatePaneDirection "Up"},
+  {key="k", mods="CMD|SHIFT", action=act.ActivatePaneDirection "Down"},
+  {key="l", mods="CMD|SHIFT", action=act.ActivatePaneDirection "Right"},
 }
 
 -- Adjust default window size
